@@ -1,6 +1,6 @@
 # POSLeasing Web App
 
-## Components
+## Component Heirarchy
 
 ```bash
  ├── components
