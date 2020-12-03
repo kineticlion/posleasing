@@ -1,0 +1,55 @@
+import React from "react";
+import { IconButton, Menu, MenuItem } from "@material-ui/core";
+import { IoMenuSharp } from "react-icons/io5";
+import { IoLogOutOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+export default function DashboardMenu() {
+ const [anchorEl, setAnchorEl] = React.useState(null);
+
+ const handleClick = event => {
+  setAnchorEl(event.currentTarget);
+ };
+
+ const handleClose = () => {
+  setAnchorEl(null);
+ };
+
+ return (
+  <Style>
+   <IconButton style={{ outline: "none" }} aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
+    <IoMenuSharp className='icon' size='7vmin' />
+   </IconButton>
+   <Menu id='simple-menu' anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+    <MenuItem onClick={handleClose}>Add New Client</MenuItem>
+    <MenuItem onClick={handleClose}>Client Report</MenuItem>
+    <MenuItem onClick={handleClose}>Pipeline</MenuItem>
+    <MenuItem onClick={handleClose}>Forms</MenuItem>
+    <MenuItem onClick={handleClose}>Calendar</MenuItem>
+    <MenuItem onClick={handleClose}>Reports</MenuItem>
+    <MenuItem onClick={handleClose}>Inquiries</MenuItem>
+   </Menu>
+   <StyledLink to='/'>
+    <IoLogOutOutline size='7vmin' className='icon' />
+   </StyledLink>
+  </Style>
+ );
+}
+
+const Style = styled.div`
+ .icon {
+  color: #003273;
+  font-size: "7vmin";
+  &:hover {
+   color: #0275d8;
+  }
+ }
+`;
+
+const StyledLink = styled(Link)`
+ color: #003273;
+ &:hover {
+  color: #003273;
+ }
+`;

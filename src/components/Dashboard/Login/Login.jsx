@@ -1,21 +1,27 @@
-import React from "react";
-import logo from "../../logo.svg";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
 import styled from "styled-components";
 
+import Logo from "../common/Logo";
 import LoginForm from "./LoginForm";
+import { useHistory } from "react-router";
 
 const Login = () => {
+ const [loading, setLoading] = useState(false);
+
+ const history = useHistory();
  const handleSubmit = e => {
   e.preventDefault();
-  console.log("Form Submitted");
+  setLoading(true);
+  setTimeout(() => {
+   return history.replace("/dashboard");
+  }, 1000);
  };
 
  return (
   <Styles>
    <div className='container login-container'>
-    <img src={logo} alt='Logo' className='logo mb-5' />
-    <LoginForm onSubmit={handleSubmit} />
+    <Logo classes='logo mb-5' />
+    <LoginForm loading={loading} onSubmit={handleSubmit} />
    </div>
   </Styles>
  );
