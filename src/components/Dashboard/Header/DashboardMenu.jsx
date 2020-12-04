@@ -17,13 +17,20 @@ export default function DashboardMenu() {
 
  return (
   <Style>
+   <StyledLink to='/'>
+    <Tooltip title='Logout'>
+     <IconButton style={{ outline: "none" }} edge='end'>
+      <IoLogOutOutline size='7vmin' className='icon' />
+     </IconButton>
+    </Tooltip>
+   </StyledLink>
+
    <Tooltip title='Menu'>
     <IconButton style={{ outline: "none" }} aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
      <IoMenuSharp className='icon' size='7vmin' />
     </IconButton>
    </Tooltip>
    <Menu id='simple-menu' anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-    <MenuItem onClick={handleClose}>Add New Client</MenuItem>
     <MenuItem onClick={handleClose}>Client Report</MenuItem>
     <MenuItem onClick={handleClose}>Pipeline</MenuItem>
     <MenuItem onClick={handleClose}>Forms</MenuItem>

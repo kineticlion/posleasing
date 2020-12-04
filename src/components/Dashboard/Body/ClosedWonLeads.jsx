@@ -5,7 +5,7 @@ import { Table, TableRow, TableHead, TableFooter, TablePagination, TableCell, Ta
 import FirstPageIcon from "@material-ui/icons/FirstPage";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@material-ui/icons";
 import LastPageIcon from "@material-ui/icons/LastPage";
-import { IoPeopleOutline } from "react-icons/io5";
+import { IoLockClosedOutline } from "react-icons/io5";
 
 const useStyles1 = makeStyles(theme => ({
  root: {
@@ -115,7 +115,7 @@ export default function CustomPaginationActionsTable() {
  return (
   <TableContainer component={Paper} elevation={3}>
    <Typography className='p-3'>
-    <IoPeopleOutline size='2em' />
+    <IoLockClosedOutline size='2em' />
     <b> CLOSED WON LEADS</b>
    </Typography>
    <Table className={classes.table} aria-label='custom pagination table'>
