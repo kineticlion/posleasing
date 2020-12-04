@@ -1,8 +1,10 @@
 import React from "react";
 import { IconButton, Menu, MenuItem, Tooltip } from "@material-ui/core";
-import { IoMenuSharp, IoLogOutOutline } from "react-icons/io5";
+import { IoMenuSharp, IoLogOutOutline, IoAddCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import AddNewClientButton from "../../AddNewClient/AddNewClientButton";
 
 export default function DashboardMenu() {
  const [anchorEl, setAnchorEl] = React.useState(null);
@@ -17,13 +19,7 @@ export default function DashboardMenu() {
 
  return (
   <Style>
-   <StyledLink to='/'>
-    <Tooltip title='Logout'>
-     <IconButton style={{ outline: "none" }} edge='end'>
-      <IoLogOutOutline size='7vmin' className='icon' />
-     </IconButton>
-    </Tooltip>
-   </StyledLink>
+   <AddNewClientButton />
 
    <Tooltip title='Menu'>
     <IconButton style={{ outline: "none" }} aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
