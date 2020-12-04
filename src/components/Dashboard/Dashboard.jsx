@@ -7,7 +7,7 @@ import DashboardBody from "./Body/DashboardBody";
 const Dashboard = () => {
  return (
   <Style>
-   <div className='container-fluid p-5'>
+   <div className='container-fluid p-0 px-md-4'>
     <DashboardHeader />
     <DashboardBody />
    </div>

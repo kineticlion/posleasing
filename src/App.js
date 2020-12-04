@@ -2,6 +2,7 @@ import './App.css';
 import Login from './components/Login/Login';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

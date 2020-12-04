@@ -1,26 +1,22 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
-import { CircularProgress } from "@material-ui/core";
+import { CircularProgress, IconButton, TextField } from "@material-ui/core";
+import { IoLogInOutline } from "react-icons/io5";
 
 const LoginForm = ({ onSubmit: handleSubmit, loading }) => {
  return (
   <Styles>
    <div className='container justify-content-center d-flex align-items-center'>
-    <form onSubmit={handleSubmit} className='w-50' autoComplete='off'>
-     <div className='form-group'>
-      <input type='email' className='form-control input-lg' id='exampleInputEmail1' placeholder='Username' />
-     </div>
-     <div className='form-group'>
-      <input type='password' className='form-control' id='exampleInputPassword1' placeholder='Password' />
-     </div>
+    <form className='d-flex flex-column w-50' onSubmit={handleSubmit} noValidate autoComplete='off'>
+     <TextField className='my-2' id='username' label='Username' />
+     <TextField type='password' className='my-2' id='password' label='Password' />
      <div className='d-flex justify-content-center'>
       {!loading ? (
-       <button type='submit' className='btn btn-primary btn-md'>
-        Login
-       </button>
+       <IconButton type='submit' style={{ outline: "none", backgroundColor: "transparent" }}>
+        <IoLogInOutline size='7vmin' className='icon' />
+       </IconButton>
       ) : (
-       <CircularProgress style={{ color: "#003273" }} />
+       <CircularProgress className='mt-4' size='7vmin' style={{ color: "#003273" }} />
       )}
      </div>
     </form>
@@ -31,16 +27,12 @@ const LoginForm = ({ onSubmit: handleSubmit, loading }) => {
 
 const Styles = styled.div`
  width: 100%;
- input {
-  text-align: center;
- }
 
- button {
-  background-color: #003273;
+ .icon {
   outline: 0;
-  border: 0;
+  color: #003273;
   &:hover {
-   background-color: #0275d8;
+   color: #0275d8;
   }
  }
 `;

@@ -1,7 +1,6 @@
 import React from "react";
-import { IconButton, Menu, MenuItem } from "@material-ui/core";
-import { IoMenuSharp } from "react-icons/io5";
-import { IoLogOutOutline } from "react-icons/io5";
+import { IconButton, Menu, MenuItem, Tooltip } from "@material-ui/core";
+import { IoMenuSharp, IoLogOutOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -18,9 +17,11 @@ export default function DashboardMenu() {
 
  return (
   <Style>
-   <IconButton style={{ outline: "none" }} aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
-    <IoMenuSharp className='icon' size='7vmin' />
-   </IconButton>
+   <Tooltip title='Menu'>
+    <IconButton style={{ outline: "none" }} aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
+     <IoMenuSharp className='icon' size='7vmin' />
+    </IconButton>
+   </Tooltip>
    <Menu id='simple-menu' anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
     <MenuItem onClick={handleClose}>Add New Client</MenuItem>
     <MenuItem onClick={handleClose}>Client Report</MenuItem>
@@ -30,8 +31,13 @@ export default function DashboardMenu() {
     <MenuItem onClick={handleClose}>Reports</MenuItem>
     <MenuItem onClick={handleClose}>Inquiries</MenuItem>
    </Menu>
+
    <StyledLink to='/'>
-    <IoLogOutOutline size='7vmin' className='icon' />
+    <Tooltip title='Logout'>
+     <IconButton style={{ outline: "none" }} edge='end'>
+      <IoLogOutOutline size='7vmin' className='icon' />
+     </IconButton>
+    </Tooltip>
    </StyledLink>
   </Style>
  );
