@@ -18,6 +18,10 @@ const useStyles = makeStyles(theme => ({
   border: "2px solid #000",
   boxShadow: theme.shadows[5],
   padding: theme.spacing(2, 4, 3),
+  width: "90vw",
+  maxHeight: "100%",
+  overflow: "auto",
+  height: "80vh",
  },
 }));
 
@@ -42,12 +46,14 @@ const AddNewClientModal = ({ open, setOpen }) => {
    }}>
    <Fade in={open}>
     <div className={classes.paper}>
-     <h2 style={{ fontSize: "5vmin" }}>
-      Add New Client
+     <div className='d-flex justify-content-between'>
+      <h2 className='align-self-center' style={{ fontSize: "5vmin" }}>
+       Add New Client
+      </h2>
       <IconButton className='ml-5 mb-2' onClick={handleClose} style={{ outline: 0 }}>
        <IoCloseCircleOutline size='6vmin' />
       </IconButton>
-     </h2>
+     </div>
 
      <AddNewClientBody onClose={handleClose} />
     </div>
