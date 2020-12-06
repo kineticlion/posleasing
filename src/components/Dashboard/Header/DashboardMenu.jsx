@@ -1,10 +1,10 @@
 import React from "react";
 import { IconButton, Menu, MenuItem, Tooltip } from "@material-ui/core";
-import { IoMenuSharp, IoLogOutOutline, IoAddCircleOutline } from "react-icons/io5";
+import { IoMenuSharp, IoLogOutOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import AddNewClientButton from "../../AddNewClient/AddNewClientButton";
+import AddNewClient from "../../AddNewClient/AddNewClient";
 
 export default function DashboardMenu() {
  const [anchorEl, setAnchorEl] = React.useState(null);
@@ -19,7 +19,7 @@ export default function DashboardMenu() {
 
  return (
   <Style>
-   <AddNewClientButton />
+   <AddNewClient />
 
    <Tooltip title='Menu'>
     <IconButton style={{ outline: "none" }} aria-controls='simple-menu' aria-haspopup='true' onClick={handleClick}>
