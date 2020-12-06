@@ -6,6 +6,7 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import AddNewClientBody from "./AddNewClientBody";
+import { IoChevronForwardCircleOutline } from "react-icons/io5";
 
 const useStyles = makeStyles(theme => ({
  modal: {
@@ -25,11 +26,15 @@ const useStyles = makeStyles(theme => ({
  },
 }));
 
-const AddNewClientModal = ({ open, setOpen }) => {
+const AddNewClientModal = ({ open, setOpen, next }) => {
  const classes = useStyles();
 
  const handleClose = () => {
   setOpen(false);
+ };
+
+ const handleNext = () => {
+  next(true);
  };
 
  return (
@@ -56,6 +61,12 @@ const AddNewClientModal = ({ open, setOpen }) => {
      </div>
 
      <AddNewClientBody onClose={handleClose} />
+
+     <div className='d-flex justify-content-end'>
+      <IconButton onClick={handleNext} style={{ outline: 0 }}>
+       <IoChevronForwardCircleOutline size='6vmin' />
+      </IconButton>
+     </div>
     </div>
    </Fade>
   </Modal>

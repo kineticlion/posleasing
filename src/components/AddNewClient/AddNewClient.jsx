@@ -1,14 +1,16 @@
 import React from "react";
-import AddNewClientModal from "./AddNewClientModal";
+import AddNewClientModal1 from "./AddNewClientModal1";
+import AddNewClientModal2 from "./AddNewClientModal2";
 import AddNewClientButton from "./AddNewClientButton";
 
 const AddNewClient = () => {
- const [open, setOpen] = React.useState(false);
-
+ const [open1, setOpen1] = React.useState(false);
+ const [open2, setOpen2] = React.useState(false);
  return (
   <>
-   <AddNewClientButton setOpen={setOpen} />
-   <AddNewClientModal open={open} setOpen={setOpen} />
+   <AddNewClientButton setOpen={setOpen1} />
+   <AddNewClientModal1 open={open1} setOpen={setOpen1} next={setOpen2} />
+   <AddNewClientModal2 open={open2} setOpen={setOpen2} />
   </>
  );
 };
