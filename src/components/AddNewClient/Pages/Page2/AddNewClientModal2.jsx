@@ -2,10 +2,10 @@ import React from "react";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Modal from "@material-ui/core/Modal";
-import { IoCloseCircleOutline } from "react-icons/io5";
+import { IoChevronBackCircleOutline, IoChevronForwardCircleOutline } from "react-icons/io5";
 import { IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import AddNewClientBody from "./AddNewClientBody";
+import AddNewClientPage2 from "./AddNewClientPage2";
 
 const useStyles = makeStyles(theme => ({
  modal: {
@@ -47,10 +47,17 @@ const AddNewClientModal = ({ open, setOpen }) => {
     <div className={classes.paper}>
      <div className='d-flex justify-content-between'>
       <h2 className='align-self-center' style={{ fontSize: "5vmin" }}>
-       Add New Client Page 2
+       Add New Client
       </h2>
       <IconButton className='ml-5 mb-2' onClick={handleClose} style={{ outline: 0 }}>
-       <IoCloseCircleOutline size='6vmin' />
+       <IoChevronBackCircleOutline size='6vmin' />
+      </IconButton>
+     </div>
+     <AddNewClientPage2 />
+
+     <div className='d-flex justify-content-end'>
+      <IconButton onClick={handleClose} style={{ outline: 0 }}>
+       <IoChevronForwardCircleOutline size='6vmin' />
       </IconButton>
      </div>
     </div>

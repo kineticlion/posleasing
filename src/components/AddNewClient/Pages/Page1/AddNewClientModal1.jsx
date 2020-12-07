@@ -1,12 +1,10 @@
 import React from "react";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import Modal from "@material-ui/core/Modal";
-import { IoCloseCircleOutline } from "react-icons/io5";
+import { Fade, Modal, Backdrop } from "@material-ui/core";
+import { IoCloseCircleOutline, IoChevronForwardCircleOutline } from "react-icons/io5";
 import { IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import AddNewClientBody from "./AddNewClientBody";
-import { IoChevronForwardCircleOutline } from "react-icons/io5";
+
+import AddNewClientPage1 from "./AddNewClientPage1";
 
 const useStyles = makeStyles(theme => ({
  modal: {
@@ -60,7 +58,7 @@ const AddNewClientModal = ({ open, setOpen, next }) => {
       </IconButton>
      </div>
 
-     <AddNewClientBody onClose={handleClose} />
+     <AddNewClientPage1 onClose={handleClose} />
 
      <div className='d-flex justify-content-end'>
       <IconButton onClick={handleNext} style={{ outline: 0 }}>

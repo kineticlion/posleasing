@@ -1,6 +1,6 @@
 import React from "react";
-import AddNewClientModal1 from "./AddNewClientModal1";
-import AddNewClientModal2 from "./AddNewClientModal2";
+import AddNewClientModal1 from "./Pages/Page1/AddNewClientModal1";
+import AddNewClientModal2 from "./Pages/Page2/AddNewClientModal2";
 import AddNewClientButton from "./AddNewClientButton";
 
 const AddNewClient = () => {
