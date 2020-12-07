@@ -1,7 +1,7 @@
-import { Modal } from "@material-ui/core";
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import SignaturePad from "react-signature-canvas";
+import { Modal, Button } from "@material-ui/core";
 import style from "./style.css";
 
 class LeaseAcceptanceSignatureModal extends Component {
@@ -31,15 +31,15 @@ class LeaseAcceptanceSignatureModal extends Component {
       />
      </div>
      <div>
-      <button className='buttons' onClick={this.clear}>
+      <Button title='Clear' variant='contained' color='primary' className='buttons' onClick={this.clear}>
        Clear
-      </button>
-      <button className={"buttons"} onClick={this.trim}>
+      </Button>
+      <Button variant='contained' color='primary' className={"buttons"} onClick={this.trim}>
        Save
-      </button>
-      <button className={"buttons"} onClick={() => this.props.setOpen(false)}>
+      </Button>
+      <Button variant='contained' color='primary' className={"buttons"} onClick={() => this.props.setOpen(false)}>
        Close
-      </button>
+      </Button>
      </div>
      {trimmedDataURL ? <img className='sigImage' src={trimmedDataURL} /> : null}
     </div>

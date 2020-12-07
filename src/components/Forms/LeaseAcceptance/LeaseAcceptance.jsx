@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@material-ui/core";
 import LeaseAcceptanceSignatureModal from "./Signature/LeaseSignatureModal";
 import PersonalGauranteeModal from "./Signature/PersonalGaurantee";
 
@@ -19,7 +20,9 @@ const LeaseAcceptance = () => {
     THIS IS A NON-CANCELABLE LEASE FOR THE FULL TERM INDICATED HEREIN.
    </p>
    <LeaseAcceptanceSignatureModal open={open1} setOpen={setOpen1} />
-   <button onClick={() => setOpen1(true)}>Open Lease Signature</button>
+   <Button variant='contained' color='primary' onClick={() => setOpen1(true)}>
+    Open Lease Signature
+   </Button>
    <br />
    <br />
    <h1>Personal Gaurantee</h1>
@@ -33,7 +36,9 @@ const LeaseAcceptance = () => {
     products to Lessee and determining Lessee’s eligibility for any other products or services and for other business purposes.
    </p>
    <PersonalGauranteeModal open={open2} setOpen={setOpen2} />
-   <button onClick={() => setOpen2(true)}>Open Personal Gaurantee Signature</button>
+   <Button variant='contained' color='primary' onClick={() => setOpen2(true)}>
+    Open Personal Gaurantee Signature
+   </Button>
   </div>
  );
 };
