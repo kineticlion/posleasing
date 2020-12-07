@@ -51,7 +51,7 @@ const AddNewClientModal = ({ open, setOpen, next }) => {
     <div className={classes.paper}>
      <div className='d-flex justify-content-between'>
       <h2 className='align-self-center' style={{ fontSize: "5vmin" }}>
-       Add New Client
+       New Client
       </h2>
       <IconButton className='ml-5 mb-2' onClick={handleClose} style={{ outline: 0 }}>
        <IoCloseCircleOutline size='6vmin' />
