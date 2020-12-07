@@ -25,10 +25,14 @@ const useStyles = makeStyles(theme => ({
  },
 }));
 
-const AddNewClientModal = ({ open, setOpen }) => {
+const AddNewClientModal = ({ open, setOpen, next }) => {
  const classes = useStyles();
  const handleClose = () => {
   setOpen(false);
+ };
+
+ const handleNext = () => {
+  next(true);
  };
 
  return (
@@ -47,7 +51,7 @@ const AddNewClientModal = ({ open, setOpen }) => {
     <div className={classes.paper}>
      <div className='d-flex justify-content-between'>
       <h2 className='align-self-center' style={{ fontSize: "5vmin" }}>
-       New Client
+       New Client - Information
       </h2>
       <IconButton className='ml-5 mb-2' onClick={handleClose} style={{ outline: 0 }}>
        <IoChevronBackCircleOutline size='6vmin' />
@@ -56,7 +60,7 @@ const AddNewClientModal = ({ open, setOpen }) => {
      <AddNewClientPage2 />
 
      <div className='d-flex justify-content-end'>
-      <IconButton onClick={handleClose} style={{ outline: 0 }}>
+      <IconButton onClick={handleNext} style={{ outline: 0 }}>
        <IoChevronForwardCircleOutline size='6vmin' />
       </IconButton>
      </div>

@@ -8,21 +8,21 @@ const ScheduleOfPayments = () => {
    <div className='container-fluid justify-content-between my-3 p-0'>
     <div className='row'>
      <div className='col-md-4 mb-3'>
-      <TextField className='w-100' size='small' id='f_name' label='Lease Term/Month' variant='outlined' />
+      <TextField className='w-100' size='small' id='schedule_lease' label='Lease Term/Month' variant='outlined' />
      </div>
      <div className='col-md-5 col-lg-3 mb-3'>
       <FormControl className='w-100' variant='outlined' size='small'>
-       <InputLabel htmlFor='outlined-adornment-amount'>Total Monthly Lease Charge</InputLabel>
+       <InputLabel htmlFor='schedule_total_charge'>Total Monthly Lease Charge</InputLabel>
        <OutlinedInput
         type='number'
         inputProps={{
          "aria-label": "weight",
         }}
-        id='outlined-adornment-amount'
+        id='schedule_total_charge'
         startAdornment={<InputAdornment position='start'>$</InputAdornment>}
         labelWidth={200}
        />
-       <FormHelperText id='outlined-weight-helper-text'>Total Charge Without Tax</FormHelperText>
+       <FormHelperText>Total Charge Without Tax</FormHelperText>
       </FormControl>
      </div>
     </div>
