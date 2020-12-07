@@ -37,6 +37,9 @@ class LeaseAcceptanceSignatureModal extends Component {
       <button className={"buttons"} onClick={this.trim}>
        Save
       </button>
+      <button className={"buttons"} onClick={() => this.props.setOpen(false)}>
+       Close
+      </button>
      </div>
      {trimmedDataURL ? <img className='sigImage' src={trimmedDataURL} /> : null}
     </div>
