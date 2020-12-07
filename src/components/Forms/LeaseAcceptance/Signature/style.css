@@ -6,13 +6,16 @@ body {
 }
 
 .container {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
  width: 100%;
- height: 60vh;
+ height: 100vh;
 }
 
 .sigContainer {
  width: 100%;
- height: 80%;
+ height: 40%;
  margin: 0 auto;
  background-color: #fff;
 }
