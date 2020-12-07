@@ -6,6 +6,9 @@ import PersonalGauranteeModal from "./Signature/PersonalGaurantee";
 const LeaseAcceptance = () => {
  const [open1, setOpen1] = useState(false);
  const [open2, setOpen2] = useState(false);
+ const [signature1, setSignature1] = useState(null);
+ const [signature2, setSignature2] = useState(null);
+
  return (
   <div>
    <h1>Lease acceptance</h1>
@@ -19,12 +22,13 @@ const LeaseAcceptance = () => {
     <br />
     THIS IS A NON-CANCELABLE LEASE FOR THE FULL TERM INDICATED HEREIN.
    </p>
-   <LeaseAcceptanceSignatureModal open={open1} setOpen={setOpen1} />
+   {signature1 ? <img className='sigImage' alt='signature-1' src={signature1} /> : null}
+   <LeaseAcceptanceSignatureModal open={open1} setOpen={setOpen1} setSignature1={setSignature1} />
+   <br /> <br />
    <Button variant='contained' color='primary' onClick={() => setOpen1(true)}>
     Open Lease Signature
    </Button>
-   <br />
-   <br />
+   <br /> <br />
    <h1>Personal Gaurantee</h1>
    <p>
     Undersigned unconditionally guarantees performance of this Equipment Lease Agreement by Lessee and payment of all sums due thereunder in the event of default, hereby waiving any
@@ -35,7 +39,9 @@ const LeaseAcceptance = () => {
     successors and assigns for assessing the creditworthiness of the undersigned in connection with this Application and the ongoing creditworthiness of the undersigned, for offering other
     products to Lessee and determining Lessee’s eligibility for any other products or services and for other business purposes.
    </p>
-   <PersonalGauranteeModal open={open2} setOpen={setOpen2} />
+   {signature2 ? <img className='sigImage' alt='signature-2' src={signature2} /> : null} <br />
+   <br />
+   <PersonalGauranteeModal open={open2} setOpen={setOpen2} setSignature2={setSignature2} />
    <Button variant='contained' color='primary' onClick={() => setOpen2(true)}>
     Open Personal Gaurantee Signature
    </Button>
