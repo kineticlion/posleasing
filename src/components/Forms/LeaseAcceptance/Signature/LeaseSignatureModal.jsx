@@ -21,7 +21,7 @@ class LeaseAcceptanceSignatureModal extends Component {
   console.log(this.props);
   return (
    <Modal open={this.props.open} onClose={() => this.props.setOpen(false)}>
-    <div className='container'>
+    <div className='container-modal'>
      <div className='sigContainer'>
       <SignaturePad
        canvasProps={{ className: "sigPad" }}
@@ -31,13 +31,13 @@ class LeaseAcceptanceSignatureModal extends Component {
       />
      </div>
      <div>
-      <Button title='Clear' variant='contained' color='primary' className='buttons' onClick={this.clear}>
+      <Button title='Clear' variant='contained' color='primary' className='buttons-modal' onClick={this.clear}>
        Clear
       </Button>
-      <Button variant='contained' color='primary' className={"buttons"} onClick={this.trim}>
+      <Button variant='contained' color='primary' className='buttons-modal' onClick={this.trim}>
        Save
       </Button>
-      <Button variant='contained' color='primary' className={"buttons"} onClick={() => this.props.setOpen(false)}>
+      <Button variant='contained' color='primary' className='buttons-modal' onClick={() => this.props.setOpen(false)}>
        Close
       </Button>
      </div>
