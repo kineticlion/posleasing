@@ -11,7 +11,9 @@ class PersonalGauranteeModal extends Component {
  };
  trim = () => {
   this.props.setSignature2(this.sigPad.getTrimmedCanvas().toDataURL("image/png"));
+  this.props.setOpen(false);
  };
+
  render() {
   return (
    <Modal open={this.props.open} onClose={() => this.props.setOpen(false)}>

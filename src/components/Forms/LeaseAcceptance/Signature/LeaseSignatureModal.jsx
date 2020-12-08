@@ -10,6 +10,7 @@ class LeaseAcceptanceSignatureModal extends Component {
  };
  trim = () => {
   this.props.setSignature1(this.sigPad.getTrimmedCanvas().toDataURL("image/png"));
+  this.props.setOpen(false);
  };
  render() {
   return (
